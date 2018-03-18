@@ -1,0 +1,11 @@
+<div>
+  <form [formGroup]="form" (ngSubmit)="createQuote()">
+    <input type="text" formControlName="firstname" placeholder="prénom"><br>
+    <input type="text" formControlName="lastname" placeholder="nom"><br>
+    <textarea formControlName="quote" cols="30" rows="10"></textarea><br>
+    <button>ajouter</button>
+  </form>
+</div>
+<div>
+  {{ form.value | json }}
+</div>

@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
-import {QuotesService} from "./services/quotes.service";
+import { Component, OnInit } from '@angular/core';
+import {QuotesService} from '../../services/quotes.service';
+
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-backend-home',
+  templateUrl: './backend-home.component.html',
+  styleUrls: ['./backend-home.component.css']
 })
-export class AppComponent {
-  /*
+export class BackendHomeComponent implements OnInit {
   constructor(private quotesService: QuotesService) {}
 
   onQuoteCreated(quote) {
@@ -20,5 +20,8 @@ export class AppComponent {
     });
     console.log('le retour ', addedQuotes);
   }
-*/
+
+  ngOnInit() {
+  }
+
 }
