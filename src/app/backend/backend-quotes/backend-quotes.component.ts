@@ -9,14 +9,14 @@ import { AngularFireDatabase, AngularFireAction } from 'angularfire2/database';
 })
 export class BackendQuotesComponent implements OnInit {
   quotes$
-  constructor(private quotesService: QuotesService, private  afDb: AngularFireDatabase) { }
+  constructor(private quotesService: QuotesService) { }
 
   ngOnInit() {
     this.quotes$ = this.quotesService.getQuotes();
   }
   deleteQuote(quote){
-    console.log('delete quote ', quote);
-    this.afDb.list('quotes').remove(quote.key);
+    //console.log('delete quote ', quote);
+    this.quotesService.deleteQuoteById(quote.keys);
   }
   showQuoteDetails(quote) {
     console.log('quote ', quote);
